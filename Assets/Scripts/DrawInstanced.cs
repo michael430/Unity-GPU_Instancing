@@ -96,18 +96,22 @@ public class DrawInstanced : MonoBehaviour {
             return;
 
 #if UNITY_5_5_OR_NEWER
+    #if UNITY_5_6_OR_NEWER
         if(EnableGPUInstancing)
-            /// Since version 5.5, You can specify the number of instances to draw, 
-            /// or by default it is the length of the matrices array.
-            /// Note: You can only draw a maximum of 1023 instances at once.
-            /// This API requires Enabled GPU Instancing.
-            Graphics.DrawMeshInstanced (mesh, 0, mat, matrixArray, matrixArray.Length, props);  /// 5.5 api
+    #endif
+
+        /// Since version 5.5, You can specify the number of instances to draw, 
+        /// or by default it is the length of the matrices array.
+        /// Note: You can only draw a maximum of 1023 instances at once.
+        /// This API requires Enabled GPU Instancing.
+        Graphics.DrawMeshInstanced(mesh, 0, mat, matrixArray, matrixArray.Length, props);  /// 5.5 api
             //Graphics.DrawMeshInstancedIndirect (...);                                         /// 5.6 api
 
+    #if UNITY_5_6_OR_NEWER
         else
             /// fallback for non-instance draw mesh.
             DrawMesh ();
-
+    #endif
 #else
         DrawMesh();
 #endif
