@@ -10,4 +10,4 @@ Graphics.DrawMeshInstanced()
 
 ##5.6
 Added enable toggle for material
-material.enableInstancing
+"material.enableInstancing"
