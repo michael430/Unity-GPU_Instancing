@@ -3,7 +3,7 @@ Unity GPU Instancing testing project.
 Requires unity version 5.4 or newer.
 
 ##5.4
-Graphics.DrawMesh() API
+Graphics.DrawMesh()
 
 ##5.5
 Graphics.DrawMeshInstanced()
