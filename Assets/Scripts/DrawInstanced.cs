@@ -51,11 +51,11 @@ public class DrawInstanced : MonoBehaviour {
         oldCount = InstanceCount;
         updateEnableInstancingState();
 
-        randomlData();
+        randomData();
     }
 
     /// Cache the random value.
-    void randomlData()
+    void randomData()
     {
         props = new MaterialPropertyBlock();
         matrixArray = new Matrix4x4[InstanceCount];
@@ -144,7 +144,7 @@ public class DrawInstanced : MonoBehaviour {
     {
         /// check if the objects count state is dirty (Editor only)
         if (oldCount != InstanceCount)
-            randomlData();
+            randomData();
 
         updateEnableInstancingState();
     }
@@ -157,7 +157,6 @@ public class DrawInstanced : MonoBehaviour {
             GUILayout.Label(" Your graphic card does not support GPU instancing." );
         }
         // Debug.Log(SystemInfo.supportsInstancing? true : false);
-
     }
 #endif
 }
