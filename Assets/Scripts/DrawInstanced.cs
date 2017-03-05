@@ -148,5 +148,16 @@ public class DrawInstanced : MonoBehaviour {
 
         updateEnableInstancingState();
     }
-    
+
+#if UNITY_EDITOR
+    /// Is GPU draw call instancing supported? 
+    void OnGUI (){
+        if (!SystemInfo.supportsInstancing){
+            GUI.color = Color.red;
+            GUILayout.Label(" Your graphic card does not support GPU instancing." );
+        }
+        // Debug.Log(SystemInfo.supportsInstancing? true : false);
+
+    }
+#endif
 }
