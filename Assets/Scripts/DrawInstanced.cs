@@ -92,7 +92,7 @@ public class DrawInstanced : MonoBehaviour {
 
     void Update()
     {
-        if (mesh == null && mat == null)
+        if (mesh == null || mat == null)
             return;
 
 #if UNITY_5_5_OR_NEWER
